@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Parisienne&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #6b4f8f;
+  background-image:
+    radial-gradient(circle at 15% 15%, rgba(255, 214, 232, 0.18), transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(255, 255, 255, 0.08), transparent 45%),
+    linear-gradient(160deg, #7c5ba0 0%, #5a3f7d 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  padding: 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 380px;
+  background: #fdf6f9;
+  border-radius: 18px;
+  padding: 44px 34px;
+  box-shadow: 0 24px 60px rgba(43, 20, 61, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(216, 165, 197, 0.35), transparent 70%);
+}
+
+h1 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 26px;
+  font-weight: 600;
+  color: #6b3f6b;
+  margin-bottom: 4px;
+  position: relative;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #9b7fa8;
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.search-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+#searchInput {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1.5px solid #e7cfe0;
+  border-radius: 10px;
+  background: #ffffff;
+  font-size: 15px;
+  color: #5a3f5a;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+#searchInput::placeholder {
+  color: #c7aec7;
+}
+
+#searchInput:focus {
+  border-color: #c874a8;
+  box-shadow: 0 0 0 3px rgba(200, 116, 168, 0.15);
+}
+
+#buscar {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #c874a8, #a35bb0);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+  box-shadow: 0 6px 16px rgba(163, 91, 176, 0.35);
+}
+
+#buscar:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(163, 91, 176, 0.45);
+}
+
+#buscar:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(163, 91, 176, 0.35);
+}
+
+#buscar:focus-visible,
+#searchInput:focus-visible {
+  outline: 2px solid #a35bb0;
+  outline-offset: 2px;
+}
+
+#result {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 22px 14px;
+  border-top: 1px dashed #e7cfe0;
+  position: relative;
+}
+
+#result:empty::before {
+  content: "Seu elogio aparece aqui ✦";
+  font-size: 13px;
+  color: #c7aec7;
+  font-style: italic;
+}
+
+#result:not(:empty) {
+  font-family: "Parisienne", "Cormorant Garamond", Georgia, serif;
+  font-size: 26px;
+  line-height: 1.4;
+  color: #6b3f6b;
+}
+
+@media (max-width: 420px) {
+  .card {
+    padding: 34px 24px;
+  }
+
+  .search-row {
+    flex-direction: column;
+  }
+
+  #buscar {
+    width: 100%;
+  }
+}
