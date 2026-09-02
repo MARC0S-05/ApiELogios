@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="style.css">
     <title>BomplimentsAPI</title>
 </head>
-<body>
     <body>
     <div class="card">
         <h1>BomplimentsAPI</h1>
@@ -33,7 +32,7 @@ async function buscarElogio() {
   }
 
   try {
-    const resposta = await fetch(`http://localhost:5000/elogios/${id}`);
+    const resposta = await fetch(`https://back-2182.onrender.com/elogios/${id}`);
     const dados = await resposta.json();
 
     if (resposta.ok) {
@@ -45,7 +44,10 @@ async function buscarElogio() {
     resultDiv.textContent = 'Erro ao conectar com o servidor. O Flask tá rodando?';
   }
 }
-</script>
+
+       </script>
+    </body>
+</html>
 
  
 </body>
